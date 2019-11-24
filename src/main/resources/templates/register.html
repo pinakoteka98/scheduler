@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/resources/styles/site.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">
+        <img id="navBrand" src="/resources/images/nav_logo.png" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMainContent" aria-controls="navMainContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMainContent">
+        <ul class="navbar-nav mr-lg-auto">
+            <li class="nav-item active">
+                <a class="nav-link" style="color: #213967; font-weight: 600" href="hhttp://www.mrober23.istwebclass.org/IST_226/Final_Project/milestone3/" role="button">
+                    Home
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" style="color: #213967; font-weight: 600;"
+                   href="http://mrober23.istwebclass.org/IST_226/Final_Project/milestone3/about.php" role="button">
+                    About
+                </a>
+            </li>
+
+            <li class="nav-item ">
+                <a class="nav-link" style="color: #213967; font-weight: 600;"
+                   href="http://mrober23.istwebclass.org/IST_226/Final_Project/milestone3/contact.php" role="button">
+                    Contact
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" style="color: #213967; font-weight: 600;"
+                   href="http://mrober23.istwebclass.org/IST_226/Final_Project/milestone3/location.php" role="button">
+                    Location
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: #213967; font-weight: 600;"
+                   href="http://sunshadersapp.ikhaew8qq8.us-east-1.elasticbeanstalk.com/scheduler/login" role="button">
+                    Appointments
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: #213967; font-weight: 600;"
+                   href="http://mrober23.istwebclass.org/IST_226/Final_Project/milestone3/photos.php" role="button">
+                    Photos
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div id="wrapper">
+<h1 class="page-header">Appointment Scheduler<br>Registration</h1>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="form-group">
+        <form th:action="@{/scheduler/register}" method="post" th:object="${user}">
+            <label for="firstname">First Name</label>
+            <input class="form-control" id="firstname" name="firstname" type="text" required>
+            <label for="lastname">Last Name</label>
+            <input class="form-control" id="lastname" name="lastname" type="text" required>
+            <label for="email">E-mail</label>
+            <input class="form-control" id="email" name="email" type="email" required>
+            <button type="submit" class="form-button btn btn-primary">Register</button>
+        </form>
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+</div>
+</body>
+</html>
